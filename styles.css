@@ -1,0 +1,117 @@
+body {
+    background-color: #ede7f6;
+    font-family: 'Open Sans', sans-serif;
+    max-width: 900px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    color: black;
+    font-size: 4em;
+    padding: 10px;
+}
+
+.centerContent {
+    background-color: #1d1f2b;
+    padding: 50px 50px;
+}
+
+.container {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    padding: 24px;
+    page-break-inside: avoid;
+    word-wrap: break-word;
+}
+
+.gotoDiv {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.gotoButton {
+    padding: 2%;
+    background-color: whitesmoke;
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    text-align: center;
+    transition-duration: 0.4s;
+}
+
+.gotoButton:hover {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+.frontPage {
+    border: 3px solid black;
+}
+
+.frontPage:hover {
+    border-color: #4CAF50;
+}
+
+label {
+    font-weight: 600;
+}
+
+.personalInfo {
+    width: 130px;
+    display: inline-block;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+input[type="text"]:hover {
+    background-color: #ede7f6;
+}
+
+input[type="checkbox"] {
+    margin-top: 20px;
+}
+
+input[type="radio"] {
+    margin-top: 20px;
+}
+
+select {
+    margin-top: 20px;
+    font-size: 1em;
+}
+
+#submitButton {
+    margin-top: 40px;
+    padding: 10px 10px;
+    background-color: whitesmoke;
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    text-align: center;
+    transition-duration: 0.4s;
+}
+
+#submitButton:hover {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+#signature {
+    margin-top: 50px;
+    text-align: center;
+}
+
+h3 {
+    margin-left: 10px;
+}
