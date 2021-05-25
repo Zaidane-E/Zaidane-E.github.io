@@ -12,6 +12,13 @@ h1 {
     padding: 10px;
 }
 
+h2 {
+    text-align: center;
+    color: black;
+    font-size: 2em;
+    padding: 10px;
+}
+
 .centerContent {
     background-color: #1d1f2b;
     padding: 50px 50px;
