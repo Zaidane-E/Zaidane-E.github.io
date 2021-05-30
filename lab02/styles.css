@@ -1,3 +1,11 @@
+/* 
+    CODE INSPIRÉ DE:
+    https://stackoverflow.com/questions/15960290/css-footer-not-displaying-at-the-bottom-of-the-page/15960308
+    http://www.java2s.com/Tutorials/Javascript/DOM_Object/Bold/index.htm
+    https://stackoverflow.com/questions/15593850/sort-array-based-on-object-attribute-javascript
+    https://carolinebarriere.github.io/SEG3125-Module2-Grocery/
+*/
+
 html, body {
     margin: 0;
     padding: 0;

@@ -1,3 +1,6 @@
+// CODE INSPIRÉ DE:
+// https://carolinebarriere.github.io/SEG3125-Module2-Grocery/
+
 // Array of products, each product is an object with different fieldset
 // A set of ingredients should be added to products		 
 
