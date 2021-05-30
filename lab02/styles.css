@@ -80,7 +80,7 @@ html, body {
 .tabcontent {
     display: none;
     padding: 0px 0px 60px 30px;
-    border: 2px solid #ccc;
+    border: 2px solid #ccc; 
 }
 
 select {
@@ -89,6 +89,10 @@ select {
 
 select:hover {
     cursor: pointer;
+}
+
+button {
+    user-select: none;
 }
 
 #main button {
@@ -102,6 +106,7 @@ select:hover {
 
 #displayProduct {
     padding: 20px 0px;
+    user-select: none;
 }
 
 input[type=checkbox]
@@ -134,4 +139,14 @@ input[type = "checkbox"]:hover {
 
 #displayCart {
     text-transform: capitalize;
+}
+
+#addCart {
+    background-color: greenyellow;
+    transition: 1s;
+}
+
+#addCart:focus {
+    color: black;
+    background-color: grey;
 }

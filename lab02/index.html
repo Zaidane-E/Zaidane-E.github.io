@@ -48,6 +48,7 @@
                         <option value="Vegetarian">Vegetarian</option>
                         <option value="GlutenFree">Gluten-free</option>
                         <option value="NutFree">Nut-free</option>
+                        <option value="Organic">Organic</option>
                         <option value="None" selected>None</option>
                     
                     </select>
@@ -62,9 +63,8 @@
                     
 
                     <div id="displayProduct"></div>
-                    
 
-                    <button id="addCart" type="button" class="block" onclick="selectedItems()">
+                    <button id="addCart" type="button" class="block" onclick="selectedItems();openInfo(event, 'Cart');">
                         Add selected items to cart.
                     </button>
 

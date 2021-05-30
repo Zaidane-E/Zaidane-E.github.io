@@ -22,7 +22,6 @@ function openInfo(evt, tabName) {
 }
 
 
-	
 // generate a checkbox list from a list of products
 // it makes each product name as the label for the checkbos
 
@@ -89,8 +88,11 @@ function selectedItems(){
 		
 	// add paragraph and total price
 	c.appendChild(para);
-	c.appendChild(document.createTextNode("Total Price is " + getTotalPrice(chosenProducts)));
-		
+	var x = document.createElement("B");
+	var t = document.createTextNode("Total Price is $" + getTotalPrice(chosenProducts));
+	x.appendChild(t);
+	c.appendChild(x);
+
 }
 
 // ADDED CODE
