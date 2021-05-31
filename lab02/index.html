@@ -36,8 +36,8 @@
                         Zesca
                     </div>
                     <button class="tablinks" onclick="openInfo(event, 'Client')" id="default-open">Client</button>
-                    <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
-                    <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+                    <button class="tablinks" onclick="openInfo(event, 'Products')" id="product-open">Products</button>
+                    <button class="tablinks" onclick="openInfo(event, 'Cart')" id="cart-open">Cart</button>
 
                 </nav>
 
@@ -51,15 +51,39 @@
                     <p>Tell us a bit about you.</p>
                     Choose a Category:
 
+                    <!--
+
                     <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
 
                         <option value="Vegetarian">Vegetarian</option>
-                        <option value="GlutenFree">Gluten-free</option>
+                        <option value="lactoseFree">lactose-free</option>
                         <option value="NutFree">Nut-free</option>
                         <option value="Organic">Organic</option>
                         <option value="None" selected>None</option>
                     
                     </select>
+
+                    -->
+
+                    <p id="productCheckList">
+
+                        <input type="checkbox" id="Vegetarian">
+                        <label for="Vegetarian">Vegetarian</label><br>
+
+                        <input type="checkbox" id="lactoseFree">
+                        <label for="lactoseFree">lactose-free</label><br>
+
+                        <input type="checkbox" id="NutFree">
+                        <label for="NutFree">Nut-free</label><br>
+
+                        <input type="checkbox" id="Organic">
+                        <label for="Organic">Organic</label><br>
+
+                    </p>
+
+                    <button id="displayResProducts" onclick="populateProductList('displayProduct');openProduct();">
+                        Confirm selection
+                    </button>
 
                 </div>
 
@@ -72,7 +96,7 @@
 
                     <div id="displayProduct"></div>
 
-                    <button id="addCart" type="button" class="block" onclick="selectedItems();openInfo(event, 'Cart');">
+                    <button id="addCart" type="button" class="block" onclick="openCart()">
                         Add selected items to cart.
                     </button>
 

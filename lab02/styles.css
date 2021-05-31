@@ -158,3 +158,17 @@ input[type = "checkbox"]:hover {
     color: black;
     background-color: grey;
 }
+
+#productCheckList {
+    text-transform: capitalize;
+}
+
+#displayResProducts {
+    background-color: greenyellow;
+    transition: 1s;
+}
+
+#displayResProducts:focus {
+    color: black;
+    background-color: white;
+}
