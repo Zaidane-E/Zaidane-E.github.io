@@ -117,15 +117,16 @@ button {
     user-select: none;
 }
 
-input[type=checkbox]
+
+input[type="checkbox"]
 {
-  /* Double-sized Checkboxes */
-  -ms-transform: scale(2); /* IE */
-  -moz-transform: scale(2); /* FF */
-  -webkit-transform: scale(2); /* Safari and Chrome */
-  -o-transform: scale(2); /* Opera */
-  transform: scale(2);
+    -ms-transform: scale(2); 
+    -moz-transform: scale(2);
+    -webkit-transform: scale(2);
+    -o-transform: scale(2);
+    transform: scale(2);
 }
+
 
 #displayProduct label {
     padding: 0px 0px 0px 20px;
