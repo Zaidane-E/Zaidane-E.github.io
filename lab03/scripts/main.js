@@ -68,7 +68,7 @@ function populateProductList(slct2) {
 		label.classList.add('addContainer');
 		span.classList.add('addCheckmark');
 
-		span.appendChild(document.createTextNode('ADD TO CART'));
+		span.appendChild(document.createTextNode('SELECT ITEM'));
 
 		img.src = getProductImage(optionArray[i]);
 
@@ -134,7 +134,7 @@ function populateCategorizedProductList(slct2, slct1) {
 		label.classList.add('addContainer');
 		span.classList.add('addCheckmark');
 
-		span.appendChild(document.createTextNode('ADD TO CART'));
+		span.appendChild(document.createTextNode('SELECT ITEM'));
 
 		img.src = getProductImage(optionArray[i]);
 
