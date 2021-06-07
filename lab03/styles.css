@@ -11,6 +11,7 @@ html, body {
     padding: 0;
     height: 100%;
     font-family: 'Roboto', sans-serif;
+    background-color: #a9c540;
 }
 
 #container {
@@ -20,6 +21,7 @@ html, body {
 
 #header {
     background: grey;
+    height: 80px;
 }
 
 #main {
@@ -73,6 +75,17 @@ html, body {
     padding: 20px 20px;
 }
 
+.tab span {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 2em;
+    padding: 20px 20px;
+}
+
 /* Change background color of buttons on hover */
 .tab button:hover {
     background-color: #ddd;
@@ -88,7 +101,8 @@ html, body {
 .tabcontent {
     display: none;
     padding: 0px 0px 60px 30px;
-    border: 2px solid #ccc; 
+    border: 2px solid rgb(0, 0, 0); 
+    background-color: rgb(237, 255, 211);
 }
 
 select {
@@ -113,10 +127,16 @@ button {
 }
 
 #displayProduct {
-    padding: 20px 0px;
+    text-transform: capitalize;
     user-select: none;
+    display: flex;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+    overflow: visible;
+    gap: 2rem;
 }
-
 
 input[type="checkbox"]
 {
@@ -155,11 +175,6 @@ input[type = "checkbox"]:hover {
     transition: 1s;
 }
 
-#addCart:focus {
-    color: black;
-    background-color: grey;
-}
-
 #productCheckList {
     text-transform: capitalize;
 }
@@ -169,7 +184,149 @@ input[type = "checkbox"]:hover {
     transition: 1s;
 }
 
-#displayResProducts:focus {
-    color: black;
+.switch {
+    position: relative;
+    float: right;
+    width: 50px;
+    height: 36px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 10px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(221, 50, 50);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
     background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: rgb(146, 224, 28);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px rgb(75, 126, 0);
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(22px);
+    -ms-transform: translateX(22px);
+    transform: translateX(22px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+fieldset {
+    width: 240px;
+    border: none;
+    margin-left: 0;
+}
+
+.card {
+    flex-basis: 300px;
+    height: 343px;
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 4px 4px 10px rgb(0 0 0 / 25%);
+    justify-content: space-evenly;
+    border: 1px solid black;
+}
+
+.price {
+    padding-bottom: 20px;
+}
+
+.productName {
+    padding-top: 20px;
+}
+
+.card img {
+    width: 50%;
+    display: block;
+    margin: auto;
+}
+
+.addContainer input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.addCheckmark {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 40px;
+    width: 100%;
+    background-color: #ccc;
+    font-size: 80%;
+    text-align: center;
+    margin: auto;
+    padding-top: 10px;
+    transition: .4s;
+}
+
+.addContainer {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  margin-top: 80px;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }

@@ -6,7 +6,8 @@
 
 var products = [
 	{
-		name: "broccoli - $1.99",
+		name: "broccoli",
+		img: 'assets/broccoli.png',
 		vegetarian: true,
 		lactoseFree: true,
 		nutFree: true,
@@ -14,7 +15,8 @@ var products = [
 		price: 1.99
 	},
 	{
-		name: "bread - $2.35",
+		name: "bread",
+		img: 'assets/bread.png',
 		vegetarian: true,
 		lactoseFree: false,
 		nutFree: true,
@@ -22,7 +24,8 @@ var products = [
 		price: 2.35
 	},
 	{
-		name: "chicken - $14.00",
+		name: "chicken",
+		img: 'assets/chicken.png',
 		vegetarian: false,
 		lactoseFree: true,
 		nutFree: true,
@@ -30,7 +33,8 @@ var products = [
 		price: 14.00
 	},
 	{
-		name: "salmon - $10.00",
+		name: "salmon",
+		img: 'assets/salmon.png',
 		vegetarian: false,
 		lactoseFree: true,
 		nutFree: true,
@@ -38,7 +42,8 @@ var products = [
 		price: 10.00
 	},
 	{
-		name: "peanut butter - $3.50",
+		name: "peanut butter",
+		img: 'assets/peanut-butter.png',
 		vegetarian: true,
 		lactoseFree: true,
 		nutFree: false,
@@ -46,7 +51,8 @@ var products = [
 		price: 3.50
 	},
 	{
-		name: "eggs - $3.00",
+		name: "eggs",
+		img: 'assets/eggs.png',
 		vegetarian: true,
 		lactoseFree: true,
 		nutFree: true,
@@ -54,7 +60,8 @@ var products = [
 		price: 3.00
 	},
 	{
-		name: "milk - $4.00",
+		name: "milk",
+		img: 'assets/milk.png',
 		vegetarian: false,
 		lactoseFree: false,
 		nutFree: true,
@@ -62,7 +69,8 @@ var products = [
 		price: 4.00
 	},
 	{
-		name: "snickers - $2.00",
+		name: "snickers",
+		img: 'assets/snickers.png',
 		vegetarian: true,
 		lactoseFree: false,
 		nutFree: false,
@@ -70,7 +78,8 @@ var products = [
 		price: 2.00
 	},
 	{
-		name: "banana - $1.30",
+		name: "banana",
+		img: 'assets/banana.png',
 		vegetarian: true,
 		lactoseFree: true,
 		nutFree: true,
@@ -78,7 +87,8 @@ var products = [
 		price: 1.30
 	},
 	{
-		name: "tuna - $1.00",
+		name: "tuna",
+		img: 'assets/tuna.png',
 		vegetarian: false,
 		lactoseFree: true,
 		nutFree: true,
@@ -86,6 +96,22 @@ var products = [
 		price: 1.00
 	}
 ];
+
+function findPrice(productName) {
+	for ( i = 0 ; i < products.length ; i++ ) {
+		if ( products[i].name == productName ) {
+			return products[i].price.toFixed(2);
+		}
+	}
+}
+
+function getProductImage(productName) {
+	for ( i = 0 ; i < products.length ; i++ ) {
+		if ( products[i].name == productName ) {
+			return products[i].img;
+		}
+	}
+}
 
 products.sort((a,b)=>(a.price>b.price?1:-1));
 
@@ -169,5 +195,5 @@ function getTotalPrice(chosenProducts) {
 			totalPrice += products[i].price;
 		}
 	}
-	return totalPrice;
+	return totalPrice.toFixed(2);
 }
