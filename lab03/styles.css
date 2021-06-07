@@ -85,6 +85,9 @@ html, body {
     transition: 0.3s;
     font-size: 2.5em;
     padding: 20px 20px;
+    background-color: greenyellow;
+    box-shadow: 1px 1px black;
+    height: 39px;
 }
 
 /* Change background color of buttons on hover */
