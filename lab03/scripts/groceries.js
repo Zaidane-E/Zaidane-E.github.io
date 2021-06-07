@@ -8,6 +8,7 @@ var products = [
 	{
 		name: "broccoli",
 		img: 'assets/broccoli.png',
+		category: 'vegetables',
 		vegetarian: true,
 		lactoseFree: true,
 		nutFree: true,
@@ -17,6 +18,7 @@ var products = [
 	{
 		name: "bread",
 		img: 'assets/bread.png',
+		category: 'grains',
 		vegetarian: true,
 		lactoseFree: false,
 		nutFree: true,
@@ -26,6 +28,7 @@ var products = [
 	{
 		name: "chicken",
 		img: 'assets/chicken.png',
+		category: 'meats',
 		vegetarian: false,
 		lactoseFree: true,
 		nutFree: true,
@@ -35,6 +38,7 @@ var products = [
 	{
 		name: "salmon",
 		img: 'assets/salmon.png',
+		category: 'meats',
 		vegetarian: false,
 		lactoseFree: true,
 		nutFree: true,
@@ -44,6 +48,7 @@ var products = [
 	{
 		name: "peanut butter",
 		img: 'assets/peanut-butter.png',
+		category: 'grains-cereals',
 		vegetarian: true,
 		lactoseFree: true,
 		nutFree: false,
@@ -53,6 +58,7 @@ var products = [
 	{
 		name: "eggs",
 		img: 'assets/eggs.png',
+		category: 'dairy',
 		vegetarian: true,
 		lactoseFree: true,
 		nutFree: true,
@@ -62,6 +68,7 @@ var products = [
 	{
 		name: "milk",
 		img: 'assets/milk.png',
+		category: 'dairy',
 		vegetarian: false,
 		lactoseFree: false,
 		nutFree: true,
@@ -71,6 +78,7 @@ var products = [
 	{
 		name: "snickers",
 		img: 'assets/snickers.png',
+		category: 'snacks',
 		vegetarian: true,
 		lactoseFree: false,
 		nutFree: false,
@@ -80,6 +88,7 @@ var products = [
 	{
 		name: "banana",
 		img: 'assets/banana.png',
+		category: 'fruits',
 		vegetarian: true,
 		lactoseFree: true,
 		nutFree: true,
@@ -89,6 +98,7 @@ var products = [
 	{
 		name: "tuna",
 		img: 'assets/tuna.png',
+		category: 'meats',
 		vegetarian: false,
 		lactoseFree: true,
 		nutFree: true,
@@ -98,17 +108,17 @@ var products = [
 ];
 
 function findPrice(productName) {
-	for ( i = 0 ; i < products.length ; i++ ) {
-		if ( products[i].name == productName ) {
-			return products[i].price.toFixed(2);
+	for ( j = 0 ; j < products.length ; j++ ) {
+		if ( products[j].name == productName ) {
+			return products[j].price.toFixed(2);
 		}
 	}
 }
 
 function getProductImage(productName) {
-	for ( i = 0 ; i < products.length ; i++ ) {
-		if ( products[i].name == productName ) {
-			return products[i].img;
+	for ( k = 0 ; k < products.length ; k++ ) {
+		if ( products[k].name == productName ) {
+			return products[k].img;
 		}
 	}
 }
@@ -117,28 +127,6 @@ products.sort((a,b)=>(a.price>b.price?1:-1));
 
 // given restrictions provided, make a reduced list of products
 // prices should be included in this list, as well as a sort based on price
-
-function restrictListProducts(prods, restriction) {
-	let product_names = [];
-	for (let i=0; i<prods.length; i+=1) {
-		if ((restriction == "Vegetarian") && (prods[i].vegetarian == true)){
-			product_names.push(prods[i].name);
-		}
-		else if ((restriction == "lactoseFree") && (prods[i].lactoseFree == true)){
-			product_names.push(prods[i].name);
-		}
-		else if (restriction == "NutFree"){
-			product_names.push(prods[i].name);
-		}
-		else if (restriction == "Organic"){
-			product_names.push(prods[i].name);
-		}
-		else if (restriction == "None"){
-			product_names.push(prods[i].name);
-		}
-	}
-	return product_names;
-}
 
 function restrictProducts() {
 
@@ -185,6 +173,30 @@ function restrictProducts() {
 
 	return product_names;
 
+}
+
+function categorize(slct) {
+
+	categorizedList = restrictProducts();
+	let output = [];
+	console.log(slct);
+
+	if ( slct == 'all' ) {
+		return categorizedList;
+	} else {
+		for ( i = 0 ; i < categorizedList.length ; i++ ) {
+			for ( j = 0 ; j < products.length ; j++ ) {
+				if ( categorizedList[i].name == products[j].name ) {
+					if ( products[j].category == slct ) {
+						output.push(categorizedList[i].name)
+					}
+				}
+			}
+		}
+	}
+
+	return output;
+ 
 }
 
 // Calculate the total price of items, with received parameter being a list of products

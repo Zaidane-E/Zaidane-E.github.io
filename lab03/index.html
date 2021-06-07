@@ -13,7 +13,6 @@
         -->
 
         <link rel="stylesheet" href="styles.css">
-        <script src="foo.js"></script>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
@@ -36,11 +35,27 @@
                         Zesca
                     </div>
                     <div class="dropdown">
-                        <span class="tablinks">Shop ></span>
+                        <span class="tablinks" id="shop">Shop ></span>
                         <div class="dropdown-content tablinks">
                             <button class="tablinks" onclick="openInfo(event, 'Client')" id="default-open">Client</button>
-                            <button class="tablinks" onclick="openInfo(event, 'Products')" id="product-open">Products</button>
+                            
+                            <div class="dropdown-products">
+
+                                <span><button class="tablinks" onclick="openInfo(event, 'Products')" id="product-open">Products</button></span>
+                                <div class="dropdown-content-products tablinks">
+                                    <button class="tablinks" id="all" onclick="categorize(this.id);openProduct();">All</button>
+                                    <button class="tablinks" id="vegetables" onclick="categorize(this.id);openProduct();">Vegetables</button>
+                                    <button class="tablinks" id="fruits" onclick="categorize(this.id);openProduct();">Fruits</button>
+                                    <button class="tablinks" id="meats" onclick="categorize(this.id);openProduct();">Meats</button>
+                                    <button class="tablinks" id="grains-cereals" onclick="categorize(this.id);openProduct();">Grains/Cereals</button>
+                                    <button class="tablinks" id="dairy" onclick="categorize(this.id);openProduct();">Dairy</button>
+                                    <button class="tablinks" id="snacks" onclick="categorize(this.id);openProduct();">Snacks</button>
+                                </div>
+
+                            </div>
+
                             <button class="tablinks" onclick="openInfo(event, 'Cart')" id="cart-open">Cart</button>
+                            
                         </div>
                       </div>
 
@@ -66,7 +81,7 @@
                                 <span class="slider round"></span>
                             </label><br>
 
-                            <label for="lactoseFree">lactose-free</label>
+                            <label for="lactoseFree">Lactose-free</label>
                             <label for="lactoseFree" class="switch">
                                 <input type="checkbox" id="lactoseFree">
                                 <span class="slider round"></span>
