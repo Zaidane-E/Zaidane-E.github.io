@@ -163,37 +163,83 @@ function restrictProducts() {
 		});
 	}
 
-	console.log(restrictedList);
-
 	let product_names = [];
 
 	for (let i=0; i<restrictedList.length; i+=1) {
 		product_names.push(restrictedList[i].name);
 	}
+	
+	console.log(products);
 
 	return product_names;
 
 }
 
+function restrictProductsAlt() {
+
+	var vegetarianCheck = document.getElementById("Vegetarian").checked;
+	var lactoseFreeCheck = document.getElementById("lactoseFree").checked;
+	var nutFreeCheck = document.getElementById("NutFree").checked;
+	var organicCheck = document.getElementById("Organic").checked;
+
+	restrictedList = products;
+
+	if ( vegetarianCheck ) {
+		var restrictedList = restrictedList.filter(function (el) {
+			return el.vegetarian === true;
+		});
+	}
+
+	if ( lactoseFreeCheck ) {
+		var restrictedList = restrictedList.filter(function (el) {
+			return el.lactoseFree === true;
+		});
+	}
+
+	if ( nutFreeCheck ) {
+		var restrictedList = restrictedList.filter(function (el) {
+			return el.nutFree === true;
+		});
+	}
+
+	if ( organicCheck ) {
+		var restrictedList = restrictedList.filter(function (el) {
+			return el.organic === true;
+		});
+	}
+
+	return restrictedList;
+
+}
+
 function categorize(slct) {
 
-	categorizedList = restrictProducts();
+	categorizedList = restrictProductsAlt();
+
 	let output = [];
+
 	console.log(slct);
+	console.log('Categorized list: ');
+	console.log(categorizedList);
 
 	if ( slct == 'all' ) {
-		return categorizedList;
-	} else {
-		for ( i = 0 ; i < categorizedList.length ; i++ ) {
-			for ( j = 0 ; j < products.length ; j++ ) {
-				if ( categorizedList[i].name == products[j].name ) {
-					if ( products[j].category == slct ) {
-						output.push(categorizedList[i].name)
-					}
-				}
-			}
+		for ( i = 0 ; i < categorizedList.length ; i++) {
+			output.push(categorizedList[i].name);
 		}
+		return output;
+	} else {
+		var categorizedList = categorizedList.filter(function (el) {
+			return el.category == slct;
+		});
+
+		for ( i = 0 ; i < categorizedList.length ; i++) {
+			output.push(categorizedList[i].name);
+		}
+		return output;
 	}
+
+	console.log(categorizedList);
+	console.log(output);
 
 	return output;
  

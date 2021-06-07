@@ -43,13 +43,13 @@
 
                                 <span><button class="tablinks" onclick="openInfo(event, 'Products')" id="product-open">Products</button></span>
                                 <div class="dropdown-content-products tablinks">
-                                    <button class="tablinks" id="all" onclick="categorize(this.id);openProduct();">All</button>
-                                    <button class="tablinks" id="vegetables" onclick="categorize(this.id);openProduct();">Vegetables</button>
-                                    <button class="tablinks" id="fruits" onclick="categorize(this.id);openProduct();">Fruits</button>
-                                    <button class="tablinks" id="meats" onclick="categorize(this.id);openProduct();">Meats</button>
-                                    <button class="tablinks" id="grains-cereals" onclick="categorize(this.id);openProduct();">Grains/Cereals</button>
-                                    <button class="tablinks" id="dairy" onclick="categorize(this.id);openProduct();">Dairy</button>
-                                    <button class="tablinks" id="snacks" onclick="categorize(this.id);openProduct();">Snacks</button>
+                                    <button class="tablinks" id="all" onclick="populateCategorizedProductList('displayProduct', this.id);openProduct();">All</button>
+                                    <button class="tablinks" id="vegetables" onclick="populateCategorizedProductList('displayProduct', this.id);openProduct();">Vegetables</button>
+                                    <button class="tablinks" id="fruits" onclick="populateCategorizedProductList('displayProduct', this.id);openProduct();">Fruits</button>
+                                    <button class="tablinks" id="meats" onclick="populateCategorizedProductList('displayProduct', this.id);openProduct();">Meats</button>
+                                    <button class="tablinks" id="grains-cereals" onclick="populateCategorizedProductList('displayProduct', this.id);openProduct();">Grains/Cereals</button>
+                                    <button class="tablinks" id="dairy" onclick="populateCategorizedProductList('displayProduct', this.id);openProduct();">Dairy</button>
+                                    <button class="tablinks" id="snacks" onclick="populateCategorizedProductList('displayProduct', this.id);openProduct();">Snacks</button>
                                 </div>
 
                             </div>
