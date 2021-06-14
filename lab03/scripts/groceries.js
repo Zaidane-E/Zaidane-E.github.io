@@ -237,11 +237,6 @@ function categorize(slct) {
 		}
 		return output;
 	}
-
-	console.log(categorizedList);
-	console.log(output);
-
-	return output;
  
 }
 
